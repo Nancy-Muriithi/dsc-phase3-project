@@ -42,7 +42,7 @@ This [dataset](https://www.kaggle.com/datasets/becksddf/churn-in-telecoms-datase
 ## MODELING 
 ### 1.Logistics Regression Model
 The model demonstrated strong learning performance on the training data, achieving balanced precision, recall, and F1-score of approximately 0.77. When evaluated on unseen test data, recall remains relatively high at 0.67, indicating the model’s ability to identify customers at risk of churning. However, precision drops to 0.33, suggesting an increase in false positive churn predictions. This trade-off reflects a recall-focused model that prioritizes identifying potential churners over minimizing false alarms, which may be suitable depending on the cost of customer retention strategies.
-<img src="images/logistics1.png" alt="Logistics_Regression_model" width="1100" height="400">
+<img src="images/logistics1.png" alt="Logistics_Regression_model" width="900" height="400">
 
 The confusion matrix shows that the model performs well at identifying non-churners, correctly classifying most of them (432 true negatives), but it struggles with precision when predicting churners. Although it successfully detects a good proportion of actual churners (66 true positives, about 67% recall), it also incorrectly labels many non-churners as churners (137 false positives), which lowers precision. Overall, the model prioritizes catching churners rather than being very accurate about who will churn, making it useful for retention strategies where missing a churner is more costly than contacting a customer who would not churn.
 
@@ -71,7 +71,7 @@ The ROC curve shows that the Random Forest model performs best, with the highest
  * The tuned Random Forest provides the best balance between accuracy and churn prediction, making it suitable for deployment.
 
  ### Feature Importants
- <img src="images/featurei.png" alt="Feature_importants" width="800" height="200">
+ <img src="images/featurei1.png" alt="Feature_importants" width="900" height="300">
 
  Based on the feature importance analysis from the Random Forest model, the following variables were identified as the most influential in predicting customer churn:
 * Total Day Minutes
