@@ -71,7 +71,7 @@ The ROC curve shows that the Random Forest model performs best, with the highest
  * The tuned Random Forest provides the best balance between accuracy and churn prediction, making it suitable for deployment.
 
  ### Feature Importants
- <img src="images/featurei1.png" alt="Feature_importants" width="900" height="300">
+ <img src="images/featurei1.png" alt="Feature_importants" width="900" height="500">
 
  Based on the feature importance analysis from the Random Forest model, the following variables were identified as the most influential in predicting customer churn:
 * Total Day Minutes
