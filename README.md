@@ -42,36 +42,36 @@ This [dataset](https://www.kaggle.com/datasets/becksddf/churn-in-telecoms-datase
 ## MODELING 
 ### 1.Logistics Regression Model
 The model demonstrated strong learning performance on the training data, achieving balanced precision, recall, and F1-score of approximately 0.77. When evaluated on unseen test data, recall remains relatively high at 0.67, indicating the model’s ability to identify customers at risk of churning. However, precision drops to 0.33, suggesting an increase in false positive churn predictions. This trade-off reflects a recall-focused model that prioritizes identifying potential churners over minimizing false alarms, which may be suitable depending on the cost of customer retention strategies.
-<img src="images/logistics.png" alt="Accidents_per_year" width="1100" height="400">
+<img src="images/logistics1.png" alt="Logistics_Regression_model" width="1100" height="400">
 
 The confusion matrix shows that the model performs well at identifying non-churners, correctly classifying most of them (432 true negatives), but it struggles with precision when predicting churners. Although it successfully detects a good proportion of actual churners (66 true positives, about 67% recall), it also incorrectly labels many non-churners as churners (137 false positives), which lowers precision. Overall, the model prioritizes catching churners rather than being very accurate about who will churn, making it useful for retention strategies where missing a churner is more costly than contacting a customer who would not churn.
 
 ### 2. Decision Tree Model
  The Decision Tree model demonstrated strong predictive performance, achieving high accuracy and substantially improved churn detection compared to previous models. It correctly identifies most non-churners and captures approximately 69% of actual churners, making it effective for customer retention efforts. However, the model exhibits signs of overfitting, as evidenced by perfect training scores, suggesting that pruning or limiting tree depth would be necessary to improve generalization to unseen data.
- <img src="images/desiciontree.png" alt="Accidents_per_year" width="1100" height="400">
+ <img src="images/desiciontree1.png" alt="Decision_tree" width="1100" height="400">
 
  This confusion matrix shows that the model performs very well at identifying non-churners, correctly classifying 507 customers who did not churn, with relatively few false alarms (62 false positives). It also identifies a good proportion of actual churners, correctly predicting 68 churn cases, while missing 30 churners. Overall, the model achieves a strong balance between catching customers at risk of churning and minimizing unnecessary churn predictions, making it more reliable and cost-effective for churn prediction than the earlier model.
 
  ### 3.Random Forest Model
  The Random Forest model demonstrated strong and well-balanced performance, achieving a high test accuracy of 91%. It effectively identifies non-churners while also improving churn detection, correctly capturing 64% of actual churners with a precision of 69%. Although the model fits the training data perfectly, its strong test results indicate good generalization and reduced overfitting compared to simpler tree-based models. Overall, this model provides the most reliable and business-useful churn predictions among the models evaluated.
-<img src="images/randomforest.png" alt="Accidents_per_year" width="1100" height="400">
+<img src="images/randomforest1.png" alt="Random_Forest" width="1100" height="400">
 
 This confusion matrix shows that the model performs very strongly overall, especially in identifying non-churners. It correctly classifies 541 non-churn customers with very few false positives (28), indicating high precision for the non-churn class. The model also identifies a good number of churners (63 true positives), though it still misses some (35 false negatives). Overall, the model achieves a strong balance between minimizing false alarms and correctly detecting customers at risk of churning, making it well-suited for churn prediction tasks.
 
 ## MODELS EVALUATION
-<img src="images/ROC.png" alt="Accidents_per_year" width="1100" height="400">
+<img src="images/ROC1.png" alt="ROC" width="1100" height="400">
 
 The ROC curve shows that the Random Forest model performs best, with the highest AUC (0.86), indicating the strongest ability to distinguish between churners and non-churners. The Decision Tree performs moderately well (AUC = 0.79), while Logistic Regression has the lowest performance (AUC = 0.77). Overall, Random Forest is the most reliable model among the three.
  
  ### Performing Hyperparameter tuning
- -GridSearchCV was used to tune the Random Forest model by testing 16 parameter combinations with 5-fold cross-validation (80 total fits).
- -The best model selected uses 100 trees with no depth restriction and minimal split constraints.
+ * GridSearchCV was used to tune the Random Forest model by testing 16 parameter combinations with 5-fold cross-validation (80 total fits).
+ * The best model selected uses 100 trees with no depth restriction and minimal split constraints.
  After tuning, the model achieved 91% test accuracy with improved churn detection (63% recall, 70% precision for churners).
- -Although the model fits the training data perfectly, its strong test performance indicates good generalization.
- -The tuned Random Forest provides the best balance between accuracy and churn prediction, making it suitable for deployment.
+ * Although the model fits the training data perfectly, its strong test performance indicates good generalization.
+ * The tuned Random Forest provides the best balance between accuracy and churn prediction, making it suitable for deployment.
 
  ### Feature Importants
- <img src="images/featurei.png" alt="Accidents_per_year" width="800" height="200">
+ <img src="images/featurei.png" alt="Feature_importants" width="800" height="200">
 
  Based on the feature importance analysis from the Random Forest model, the following variables were identified as the most influential in predicting customer churn:
 * Total Day Minutes
